@@ -33,6 +33,11 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id=id).all()
+        return image
         
     class Meta:
         ordering = ['image_name']

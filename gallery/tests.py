@@ -24,3 +24,8 @@ class ImageTestClass(TestCase):
         self.imaget.delete_image()
         imaged = Image.objects.all()
         self.assertTrue(len(imaged) == 0)
+
+    def test_get_image_by_id(self):
+        found_image = self.imaget.get_image_by_id(self.imaget.id)
+        image = Image.objects.filter(id=self.imaget.id)
+        self.assertFalse(found_image,image)
