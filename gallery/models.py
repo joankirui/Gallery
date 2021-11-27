@@ -12,3 +12,13 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category
+
+class Image(models.Model):
+    # image = models.ImageField()
+    image_name = models.CharField(max_length=30)
+    image_description = models.TextField()
+    image_location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.image_name
