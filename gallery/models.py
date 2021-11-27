@@ -13,6 +13,11 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
+    @classmethod
+    def get_location(cls):
+        place = cls.objects.all()
+        return place
+
 class Category(models.Model):
     category = models.CharField(max_length=30)
 
