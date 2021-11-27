@@ -4,5 +4,8 @@ from django.shortcuts import render
 def welcome(request):
     return render(request,'welcome.html')
 
-# def index(request):
+def index(request):
+    title = 'JK Gallery'
+
+    return render(request, 'index.html')
     
