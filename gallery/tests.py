@@ -11,7 +11,7 @@ class ImageTestClass(TestCase):
         self.category = Category(category ='home')
         self.category.save_category()
 
-        self.imaget = Image(image_name = 'image1',image_description = 'this is the first image', image_location = self.location,category = self.category)
+        self.imaget = Image(id = 1,image_name = 'image1',image_description = 'this is the first image', image_location = self.location,category = self.category)
     def test_instance(self):
         self.assertTrue(isinstance(self.imaget,Image))
 
@@ -19,3 +19,8 @@ class ImageTestClass(TestCase):
         self.imaget.save_image()
         imagel = Image.objects.all()
         self.assertTrue(len(imagel) > 0)
+
+    def test_delete_image(self):
+        self.imaget.delete_image()
+        imaged = Image.objects.all()
+        self.assertTrue(len(imaged) == 0)
