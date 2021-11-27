@@ -12,6 +12,7 @@ class ImageTestClass(TestCase):
         self.category.save_category()
 
         self.imaget = Image(id = 1,image_name = 'image1',image_description = 'this is the first image', image_location = self.location,category = self.category)
+
     def test_instance(self):
         self.assertTrue(isinstance(self.imaget,Image))
 
@@ -39,6 +40,11 @@ class ImageTestClass(TestCase):
         self.imaget.save_image()
         found_images = self.imaget.filter_by_location(location = 'Kericho')
         self.assertTrue(len(found_images) == 1)
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Category.objects.all().delete()
+        Location.objects.all().delete()
 
 
 class TestLocation(TestCase):
