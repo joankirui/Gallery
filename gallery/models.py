@@ -10,6 +10,9 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+    def delete_location(self):
+        self.delete()
+
 class Category(models.Model):
     category = models.CharField(max_length=30)
 
@@ -17,6 +20,8 @@ class Category(models.Model):
         return self.category
     def save_category(self):
         self.save()
+    def delete_category(self):
+        self.delete()
 
 class Image(models.Model):
     # image = models.ImageField()
@@ -38,6 +43,17 @@ class Image(models.Model):
     def get_image_by_id(cls,id):
         image = cls.objects.filter(id=id).all()
         return image
+
+    @classmethod
+    # error
+    def search_image(cls,category):
+        images = cls.objects.filter(category__category__icontains=category)
+        return images
+
+    @classmethod
+    def filter_by_location(cls,location):
+        img_location = Image.objects.filter(location = location).all()
+        return img_location
         
     class Meta:
         ordering = ['image_name']
