@@ -8,7 +8,7 @@
             {% for image in all_images %}
             <div class="card">
                 <!-- Image trigger modal -->
-                <img src="{{image.image.url}}" height= "300vh" class="card-img-top" data-toggle="modal" data-target="#im{{image.id}}" alt="{{image.image_name}}">
+                <img src="{{image.image.url}}" height= "300vh" class="card-img-top img-responsive" data-toggle="modal" data-target="#im{{image.id}}" alt="{{image.image_name}}">
                 
                 <!-- Modal -->
                 <div class="modal fade" id="im{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -29,8 +29,8 @@ class Category(models.Model):
         self.delete()
 
 class Image(models.Model):
-    # image = models.ImageField()
-    image_name = models.CharField(max_length=30)
+    image = models.ImageField(upload_to = 'imagefolder/',null = True)
+    image_name = models.CharField(max_length = 30)
     image_description = models.TextField()
     image_location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
