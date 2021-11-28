@@ -50,9 +50,8 @@ class Image(models.Model):
         return image
 
     @classmethod
-    # error
-    def search_image(cls,category):
-        images = cls.objects.filter(category__category__icontains=category)
+    def search_image(cls,search_term):
+        images = cls.objects.filter(category__category__icontains=search_term)
         return images
 
     @classmethod
