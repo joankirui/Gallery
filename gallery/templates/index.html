@@ -7,9 +7,9 @@
         <div class="col-md-4"></div>
         <div class="col-md-6">
             <span id="locations">
-                <!-- {% for location in locations %}
-                <a class = "btn btn-outline-info btn-sm" href="{{location.location}}">{{location.location}}</a>
-                {% endfor %} -->
+                {% for location in locations %}
+                <a class = "btn btn-outline-info btn-sm" href="{% url 'image_location' location.id%}">{{location.location}}</a>
+                {% endfor %}
             </span>
         </div>
         <div class="col-md-2"></div><br><br>

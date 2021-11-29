@@ -16,8 +16,8 @@ def index(request):
 
     return render(request, 'index.html',args)
 
-def image_location(request,location):
-    images = Image.filter_by_location(location)
+def image_location(request,id):
+    images = Image.filter_by_location(image_location__id=id)
     args = {
          "images":images
     }
@@ -39,5 +39,6 @@ def search_results(request):
 
     else:
         message = "You haven't searched for any image category"
-        return render(request,{"message":message})
+        param = {"message":message}
+        return render(request,'search.html', param)
     
