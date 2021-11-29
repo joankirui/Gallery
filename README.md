@@ -10,13 +10,13 @@
 # Live link 
 
 # SetUp and installation requirements
-You need to have the following installed:
-    *   Python3+
-    *   Pip curl https://bootstrap.pypa.io/get-pip|python
-    *   Virtual $ python3.6 -m venv pip virtual
-    *   Activate the virtual environment source virtual/bin/activate
-    *   Django 3.2 (virtual)$ pip install django==3.2
-    *   Get all requirements pip freeze > requirements.txt
+
+    * Python3+
+    * Pip curl https://bootstrap.pypa.io/get-pip|python
+    * Virtual $ python3.6 -m venv pip virtual
+    * Activate the virtual environment source virtual/bin/activate
+    * Django 3.2 (virtual)$ pip install django==3.2
+    * Get all requirements pip freeze > requirements.txt
 
 # Running the server
     python3.6 manage.py runserver
