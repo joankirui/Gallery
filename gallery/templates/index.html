@@ -4,6 +4,15 @@
 {{block.super}}
 <div class="container mt-3">
     <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6">
+            <span id="locations">
+                <!-- {% for location in locations %}
+                <a class = "btn btn-outline-info btn-sm" href="{{location.location}}">{{location.location}}</a>
+                {% endfor %} -->
+            </span>
+        </div>
+        <div class="col-md-2"></div><br><br>
         <div class="card-columns">
             {% for image in all_images %}
             <div class="card">
@@ -29,8 +38,9 @@
                         </div>
                         <div class="modal-footer">
                             <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
-                            <button class="btn btn-outline-warning" onclick="copyLink('{{image.id}}.url')">Copy</button>
+                            <button class="btn btn-success" onclick="copyLink('{{image.id}}.url')">Copy</button>
                             <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                            
                         </div>
                     </div>
                     </div>
