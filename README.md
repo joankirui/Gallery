@@ -8,6 +8,7 @@
     A photo gallery application where users can view different photos, click on them to expand, copy photo url to clipboard. Photo gallery images have different categories and various photos as well were taken in different locations. A user can click on a location to see the different images in that location. A user can also view the different photos based on their category. A search functionality is implemented where one can search for the different categories of the images.
 
 # Live link 
+    https://galleryjk.herokuapp.com/
 
 # SetUp and installation requirements
 
